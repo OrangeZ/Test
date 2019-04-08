@@ -24,6 +24,7 @@ namespace Test
     {
         List<Column> list = new List<Column>();
         List<string[]> slist = new List<string[]>();
+        List<Column> coll = new List<Column>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,16 +52,18 @@ namespace Test
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            List<Column> col = new List<Column>();
             string searchTxt = txtNumber.Text;
-            list = NewMethod1(searchTxt);
-            rptTable.DataSource = list;
+            console.Text += "搜索：" + searchTxt + "开始\r\n";
+            col = NewMethod1(searchTxt);
+            rptTable.DataSource = col;
             rptTable.DataBind();
         }
 
         private List<Column> NewMethod1(string dsdsd)
         {
-            var col = list.Where(x => x.Number.Equals(dsdsd));
-            if (col.Count() <= 0)
+            var col = list.Where(x => x.Number.Equals(dsdsd)).ToList();
+            if (col.Count <= 0)
             {
                 console.Text += dsdsd + "未找到\r\n";
                 dsdsd = dsdsd.Substring(0, dsdsd.Length - 1);
@@ -68,6 +71,7 @@ namespace Test
                 {
                     NewMethod1(dsdsd);
                 }
+                return col;
             }
             else
             {
@@ -76,9 +80,9 @@ namespace Test
                     console.Text += item.Number + "找到了\r\n";
                     item.CurrentCount++;
                 }
-                return col.ToList();
+                return col;
             }
-            return col.ToList();
+
         }
 
         protected void btnSearchList_Click(object sender, EventArgs e)
@@ -102,7 +106,7 @@ namespace Test
                     }
                     else
                     {
-                        
+
                     }
                 }
             }
