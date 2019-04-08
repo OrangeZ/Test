@@ -57,19 +57,23 @@ namespace Test
             rptTable.DataBind();
         }
 
-        private List<Column> NewMethod1(string searchTxt)
+        private List<Column> NewMethod1(string dsdsd)
         {
-            var col = list.Where(x => x.Number.Equals(searchTxt));
+            var col = list.Where(x => x.Number.Equals(dsdsd));
             if (col.Count() <= 0)
             {
-                searchTxt = searchTxt.Substring(0, searchTxt.Length - 1);
-                NewMethod1(searchTxt);
+                console.Text += dsdsd + "未找到\r\n";
+                dsdsd = dsdsd.Substring(0, dsdsd.Length - 1);
+                if (dsdsd.Length > 1)
+                {
+                    NewMethod1(dsdsd);
+                }
             }
             else
             {
                 foreach (var item in col)
                 {
-                    console.Text += item.Number + "\r\n";
+                    console.Text += item.Number + "找到了\r\n";
                     item.CurrentCount++;
                 }
                 return col.ToList();
@@ -84,7 +88,7 @@ namespace Test
             List<Column> col = new List<Column>();
             foreach (var item in txtList)
             {
-                console.Text += "搜索：" + item + "\r\n";
+                console.Text += "搜索：" + item + "开始\r\n";
                 if (!string.IsNullOrEmpty(item))
                 {
                     var l = NewMethod1(item);
@@ -92,9 +96,13 @@ namespace Test
                     {
                         foreach (var item2 in l)
                         {
-                            
+
                             col.Add(item2);
                         }
+                    }
+                    else
+                    {
+                        
                     }
                 }
             }
