@@ -65,10 +65,10 @@ namespace Test
             var col = list.Where(x => x.Number.Equals(dsdsd)).ToList();
             if (col.Count <= 0)
             {
-                console.Text += dsdsd + "未找到\r\n";
-                dsdsd = dsdsd.Substring(0, dsdsd.Length - 1);
+                console.Text += dsdsd + "未找到\r\n";          
                 if (dsdsd.Length > 1)
                 {
+                    dsdsd = dsdsd.Substring(0, dsdsd.Length - 1);
                     NewMethod1(dsdsd);
                 }
                 return col;
