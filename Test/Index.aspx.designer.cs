@@ -22,15 +22,6 @@ namespace Test {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtNumber 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumber;
-        
-        /// <summary>
         /// txtNumberList 控件。
         /// </summary>
         /// <remarks>
@@ -58,15 +49,6 @@ namespace Test {
         protected global::System.Web.UI.WebControls.LinkButton btnSearchList;
         
         /// <summary>
-        /// rptTable 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTable;
-        
-        /// <summary>
         /// console 控件。
         /// </summary>
         /// <remarks>
@@ -74,5 +56,14 @@ namespace Test {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox console;
+        
+        /// <summary>
+        /// rptTable 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptTable;
     }
 }
